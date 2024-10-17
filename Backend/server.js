@@ -1,15 +1,14 @@
 import express from "express";
 import connectToDb from "./config/db.js";
-import dotenv from "dotenv";
-import Product from "./models/product.model.js";
+import { config } from "dotenv";
+import productRouter from "./routes/product.route.js";
 
 const app = express();
 const port = 3000;
-dotenv.config();
+config();
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello World</h1>");
-});
+app.use(express.json());
+app.use("/api/products", productRouter);
 
 // db connection
 connectToDb((err) => {
