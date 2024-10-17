@@ -1,6 +1,7 @@
 import express from "express";
 import connectToDb from "./config/db.js";
 import dotenv from "dotenv";
+import Product from "./models/product.model.js";
 
 const app = express();
 const port = 3000;
