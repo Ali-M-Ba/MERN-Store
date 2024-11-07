@@ -13,15 +13,7 @@ export const getProducts = async (req, res) => {
 
 export const createProduct = async (req, res) => {
   const product = req.body;
-
-  if (!product.title || !product.price || !product.image) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Please provide all the fields" });
-  }
-
   const newProduct = new Product(product);
-
   try {
     await newProduct.save();
     res.status(201).json({ success: true, data: newProduct });

@@ -4,11 +4,11 @@ import { config } from "dotenv";
 import productRouter from "./routes/product.route.js";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 config();
 
 app.use(express.json());
-app.use("/api/products", productRouter);
+app.use("/products", productRouter);
 
 // db connection
 connectToDb((err) => {
