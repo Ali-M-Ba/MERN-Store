@@ -11,6 +11,24 @@ export const getProducts = async (req, res) => {
   }
 };
 
+export const getProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Invalid Product Id" });
+    }
+  
+    const product = await Product.findById(id);
+    res.status(200).json({ success: true, data: product });
+  } catch (error) {
+    console.error("error occurred while fetching the product", error.message);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
 export const createProduct = async (req, res) => {
   const product = req.body;
   const newProduct = new Product(product);
@@ -18,6 +36,7 @@ export const createProduct = async (req, res) => {
     await newProduct.save();
     res.status(201).json({ success: true, data: newProduct });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
