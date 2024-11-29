@@ -28,7 +28,7 @@ const UpdateProductPage = () => {
 
   return (
     <main>
-      <section className="section">
+      <section className="max-w-7xl m-auto py-16  px-6">
         <ProductForm isAdding={false} existingProduct={product} />
       </section>
     </main>

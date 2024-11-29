@@ -54,14 +54,19 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
     <form
       onSubmit={submitForm}
       method={isAdding ? "POST" : "PUT"}
-      className="product-form"
+      className="bg-secondary p-6 m-auto rounded-md w-full max-w-xl"
     >
       <fieldset>
-        <legend>{isAdding ? "Add " : "Update"} a Product</legend>
+        <legend className="font-bold text-xl mb-4">
+          {isAdding ? "Add " : "Update"} a Product
+        </legend>
 
-        <div className="form-group">
-          <label for="product-name">Product Name</label>
+        <div className="mb-4">
+          <label className="block font-semibold mb-2" for="product-name">
+            Product Name
+          </label>
           <input
+            className="w-full py-1 px-2 rounded-sm focus:outline-none text-primary"
             type="text"
             id="product-name"
             name="name"
@@ -72,9 +77,12 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
           />
         </div>
 
-        <div className="form-group">
-          <label for="product-price">Product Price</label>
+        <div className="mb-4">
+          <label className="block font-semibold mb-2" for="product-price">
+            Product Price
+          </label>
           <input
+            className="w-full py-1 px-2 rounded-sm focus:outline-none text-primary"
             type="number"
             id="product-price"
             name="price"
@@ -85,9 +93,12 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
           />
         </div>
 
-        <div className="form-group">
-          <label for="product-image">Product Image URL</label>
+        <div className="mb-4">
+          <label className="block font-semibold mb-2" for="product-image">
+            Product Image URL
+          </label>
           <input
+            className="w-full py-1 px-2 rounded-sm focus:outline-none text-primary"
             type="url"
             id="product-image"
             name="image"
@@ -98,7 +109,10 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
           />
         </div>
 
-        <button type="submit" className="btn btn-submit">
+        <button
+          type="submit"
+          className="py-2 px-4 text-center rounded-md bg-quaternary text-primary hover:bg-tertiary"
+        >
           {isAdding ? <IoMdAddCircle /> : <FaPenSquare />}
         </button>
       </fieldset>
