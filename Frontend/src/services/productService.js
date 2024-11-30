@@ -56,7 +56,7 @@ export const addProduct = async (product) => {
     }
 
     const { success, data } = jsonResponse;
-    console.log("The product added successfully: ", data)
+    // console.log("The product added successfully: ", data)
     return { success, message: "Product added successfully" };
   } catch (error) {
     console.error("Error adding product:", error);
@@ -79,7 +79,7 @@ export const updateProduct = async (id, Product) => {
     try {
       jsonResponse = await res.json();
     } catch (error) {
-      console.log("Failed to parse JSON response:", error);
+      console.error("Failed to parse JSON response:", error);
       return {
         success: false,
         message: "Error Occured while parsing the response.",
@@ -95,7 +95,7 @@ export const updateProduct = async (id, Product) => {
     }
 
     const { success, data } = jsonResponse;
-    console.log("The produce updated successfully: ", data)
+    // console.log("The produce updated successfully: ", data)
     return { success, message: "Product updated successfully" };
 
   } catch (error) {

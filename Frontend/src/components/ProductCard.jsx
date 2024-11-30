@@ -17,7 +17,7 @@ const ProductCard = ({ product, deleteJob }) => {
       key={product._id}
       className="flex flex-col items-center justify-between bg-secondary rounded-md transition-transform transform hover:-translate-y-1.5"
     >
-      <img className="rounded-t-md" src={product.image} alt={product.name} />
+      <img className="rounded-t-md h-56 w-full  object-cover" src={product.image} alt={product.name} />
       <div className="w-full">
         <div className="p-4">
           <h3 className="text-lg font-bold font">{product.name}</h3>

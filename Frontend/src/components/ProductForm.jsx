@@ -62,7 +62,7 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
         </legend>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2" for="product-name">
+          <label className="block font-semibold mb-2" htmlFor="product-name">
             Product Name
           </label>
           <input
@@ -78,7 +78,7 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2" for="product-price">
+          <label className="block font-semibold mb-2" htmlFor="product-price">
             Product Price
           </label>
           <input
@@ -94,7 +94,7 @@ const ProductForm = ({ isAdding = true, existingProduct = null }) => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2" for="product-image">
+          <label className="block font-semibold mb-2" htmlFor="product-image">
             Product Image URL
           </label>
           <input

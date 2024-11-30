@@ -49,22 +49,24 @@ const ProductList = () => {
   if (error) return <div>Error loading products: {error.message}</div>;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {products && products.length > 0 ? (
-        products.map((product) => (
-          <ProductCard
-            key={product._id}
-            product={product}
-            deleteJob={handleDelete}
-          />
-        ))
+    <>
+      {products.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+              deleteJob={handleDelete}
+            />
+          ))}
+        </div>
       ) : (
-        <div className="flex items-center gap-3">
+        <div className="flex justify-center w-full gap-3">
           <p className="m-0">No products found.</p>
-          <Link to="/add-product">Create a new product</Link>
+          <Link className="underline" to="/add-product">Create a new product</Link>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
