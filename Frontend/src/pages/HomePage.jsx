@@ -1,6 +1,6 @@
 import ProductList from "../components/ProductList";
 
-const HomePage = ({ deleteJob }) => {
+const HomePage = () => {
   return (
     <>
       <main>
@@ -8,7 +8,7 @@ const HomePage = ({ deleteJob }) => {
           <h1 className="text-center text-4xl font-bold mb-8">
             Current Products
           </h1>
-          <ProductList deleteJob={deleteJob} />
+          <ProductList />
         </section>
       </main>
     </>
